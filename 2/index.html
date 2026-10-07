@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <title>Red Lantern Design</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <!-- 響應式覆蓋樣式：放在 style.css 之後，蓋掉固定寬度 -->
+    <style>
+        html, body { max-width: 100%; overflow-x: hidden; }
+        img { max-width: 100%; height: auto; }
+
+        /* 頁面主體：最大寬度 1100px 並置中，左右留白較少 */
+        #masthead, #mainContent, #footer {
+            box-sizing: border-box !important;
+            width: auto !important;
+            max-width: 1100px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            float: none !important;
+        }
+
+        #masthead, #footer {
+            padding-left: clamp(1rem, 3vw, 2rem) !important;
+            padding-right: clamp(1rem, 3vw, 2rem) !important;
+        }
+
+        /* 中央白色底：內距固定，內容一律限制在白底裡面 */
+        #mainContent {
+            background-color: #fff !important;
+            padding: clamp(1rem, 3vw, 2rem) !important;
+            overflow: hidden;
+        }
+
+        /* 取消舊 CSS 可能設定的固定寬度、浮動、負邊距 */
+        #titleBar, #content, #sidebar, #nav {
+            width: auto !important;
+            max-width: 100%;
+            float: none !important;
+        }
+        #titleBar {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding: 0 !important;
+        }
+        #titleBar img, #port img {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            max-width: 100% !important;
+        }
+
+        /* 輪播圖：寬度不超出白底，高度隨視窗寬度變化 */
+        #heroCarousel {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        #heroCarousel .carousel-item img {
+            width: 100%;
+            height: clamp(180px, 32vw, 400px);
+            object-fit: cover;
+        }
+
+        /* 標題文字隨視窗縮放 */
+        #titleBar h1 {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            line-height: 1.3;
+            margin-top: 1rem;
+        }
+
+        /* 作品圖片：自動縮放，不超出欄位 */
+        #port img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 連結清單 */
+        #link-list { padding-left: 0; list-style: none; }
+
+        /* 小螢幕時按鈕與連結撐滿寬度，方便點擊 */
+        @media (max-width: 575.98px) {
+            #link-list .btn { width: 100%; }
+            #link-list li { text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 頁首：桌機 logo 左、選單右；手機上下堆疊 -->
+    <header id="masthead" class="container py-3">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <h1 class="m-0 mb-2 mb-md-0">
+                <img class="img-fluid" style="max-height:80px; width:auto;" alt="Red Lantern logo" src="images/rl_logo.png" />
+            </h1>
+            <nav class="navbar navbar-expand-md p-0 w-100 w-md-auto justify-content-md-end">
+                <div class="container-fluid p-0 justify-content-between justify-content-md-end">
+                    <span class="d-md-none fw-bold">選單</span>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar"
+                        aria-expanded="false" aria-label="切換選單">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse flex-grow-0" id="collapsibleNavbar">
+                        <ul id="nav" class="navbar-nav ms-md-auto text-center text-md-start">
+                            <li class="nav-item"><a class="nav-link active" title="Red Lantern home" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" title="Design services" href="services.html">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" title="Our work" href="portfolio.html">Portfolio</a></li>
+                            <li class="nav-item"><a class="nav-link" title="Contact Red Lantern" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <article id="mainContent" class="container">
+        <!-- 最上方旋轉木馬 -->
+        <section id="titleBar" class="mb-4">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="第 1 張"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="第 2 張"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="第 3 張"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="第 4 張"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/123.jpg" class="d-block w-100" alt="slide 123">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/456.jpg" class="d-block w-100" alt="slide 456">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/789.jpg" class="d-block w-100" alt="slide 789">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/101112.jpg" class="d-block w-100" alt="slide 101112">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">上一張</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">下一張</span>
+                </button>
+            </div>
+            <h1 class="text-center text-md-start">Red Lantern builds unique interfaces <span class="amp">&amp;</span> user experiences for the web.</h1>
+        </section>
+
+        <!-- 內容與側欄：≥768px 左右並排，<768px 上下堆疊 -->
+        <div class="row g-4" id="firstRow">
+            <section id="content" class="col-12 col-md-6">
+                <h2 class="h3">Welcome to the New Red Lantern Design</h2>
+                <p>Red Lantern is a small web design and consulting firm specializing in standards-based web design and
+                    development. Our goal is to build simple, beautiful webpages that make your information easy to
+                    find and your users happy.</p>
+                <p>If you or your company is interested in working with us, please check out our portfolio of design
+                    and branding work and contact us with your project details. We look forward to hearing from you and
+                    making your presence on the web a little simpler and easier to find.</p>
+                <ul id="link-list">
+                    <li class="mb-2">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">View our full portfolio</button>
+                    </li>
+                    <li><a title="Contact Red Lantern" href="contact.html">Contact Red Lantern</a></li>
+                </ul>
+            </section>
+
+            <section id="sidebar" class="col-12 col-md-6">
+                <h2 class="h3">Our Work</h2>
+                <div id="port" class="row row-cols-2 g-2 g-md-3">
+                    <div class="col"><img class="img-fluid w-100" alt="comp0" src="images/markinjapan.jpg" /></div>
+                    <div class="col"><img class="img-fluid w-100" alt="comp1" src="images/a2g.jpg" /></div>
+                    <div class="col"><img class="img-fluid w-100" alt="comp2" src="images/foobar.jpg" /></div>
+                    <div class="col"><img class="img-fluid w-100" alt="comp3" src="images/rpm.jpg" /></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+                    </div>
+                    <div class="modal-body">
+                        Modal body..
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer id="footer" class="container text-center py-4 mt-4 border-top">
+        <p class="m-0">Copyright &copy; Red Lantern Design, all rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
