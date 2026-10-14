@@ -1,0 +1,67 @@
+
+body {
+background: #1e73d8;
+font-family: Tahoma,"Microsoft JhengHei",sans-serif;
+font-size: 12px;
+color: #666;
+}
+
+.logo{color: #fff;font-size: 18px; font-weight: bold;margin: 0;}
+.slogan{color: #fff;font-size: 9px;font-weight: bold;}
+
+.page-wrap{
+    background: #fff;
+    border: 14px solid #a8dcf5;
+    max-width: 720px;
+    padding:0;
+}
+
+.main-nav{
+    background: linear-gradient(#00d0f5,#00a5cc 60%,#006a85);
+    padding-left: 40px;
+}
+
+.main-nav .navlink{
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 20px;
+}
+
+.main-nav .nav-link:hover{color: #003f52;}
+
+.title-blue {
+  color: #00bfef;
+  font-size: 18px;
+  font-weight: normal;
+}
+.icon { width: 40px; height: 40px; }
+a { color: #00bfef; }
+p { font-size: 10px; }
+
+.cyan-box {
+  background: #d3f5fd;
+  border: 1px solid #b5d9e3;
+  padding: 16px;
+  height: 100%;           /* 左右兩個方框等高 */
+}
+.photo { border: 1px solid #555; flex-shrink: 0; }
+
+.link-list { list-style: none; padding: 0; margin: 0 0 8px; }
+.link-list li::before { content: "› "; color: #333; }
+.link-list a { color: #000; font-size: 8px; text-decoration: underline; }
+
+.read-more { font-weight: bold; font-size: 10px; }
+
+.site-footer {
+  background: linear-gradient(#00d0f5, #006a85);
+  border-top: 5px solid #007a99;
+  color: #fff;
+  padding: 18px 0;
+}
+.site-footer small { font-size: 8px; }
+
+.photo {
+  width: 76px;
+  height: 70px;
+  object-fit: cover;
+}
